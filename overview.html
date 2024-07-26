@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bookstore</title>
+    <link href="style-admin.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+
+.chart-container-bar {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left:90%;
+        }
+        .chart-container-pie {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+    </style>
+</head>
+<body>
+   
+
+<button type="button" id="sidebarCollapse" class="btn">
+    <i class="fas fa-bars"></i>
+</button>
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <div class="admin-profile">
+                            <div class="admin-info">
+                                <a href="Admin.html">BookBin</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bookdetail.html">
+                            <i class="fas fa-user"></i> Overview Analysis
+                        </a>
+                    </li>                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="bookdetail.html">
+                            <i class="fas fa-user"></i> Books
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="user.html">
+                            <i class="fas fa-user"></i> User Details
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="storage.html">
+                            <i class="fas fa-user"></i> Storeges
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="content.html">
+                            <i class="fas fa-user"></i> Content Management
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Index.html">
+                            <i class="fas fa-file-alt"></i> SIGNOUT
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="row">
+        <h1>Analysis 2024 </h1>
+        <div class="col-md-6 mb-4">
+            <div class="chart-container-bar">
+                <h2>Sales</h2>
+                <div>
+                    <canvas id="chart1" height="200" width="500"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="chart-container-pie">
+                <h2>Active User / Orders</h2>
+                <div>
+                    <canvas id="chart2"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('collapsed');
+        });
+    });
+
+    // Chart data
+    var chartData1 = {
+        labels: ['Jan','Feb', 'March','April', 'May','Jun','July'],
+        datasets: [{
+            label: 'Monthly',
+            data: [400, 100, 250, 150, 600, 400,300],
+            backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50', '#9C27B0','#FF6384', '#36A2EB'],
+            hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50', '#9C27B0','#FF6384', '#36A2EB']
+        }]
+    };
+
+        var chartData2 = {
+            labels: ['Active Users', 'Orders'],
+            datasets: [{
+                label: 'Dataset 2',
+                data: [55, 98],
+                backgroundColor: ['#FF6384', '#36A2EB'],
+                hoverBackgroundColor: ['#FF6384', '#36A2EB']
+            }]
+        };
+        var chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false
+        };
+
+        // Initialize charts
+        var ctx1 = document.getElementById('chart1').getContext('2d');
+        new Chart(ctx1, {
+            type: 'bar',
+            data: chartData1,
+            options: chartOptions
+        });
+
+        var ctx2 = document.getElementById('chart2').getContext('2d');
+        new Chart(ctx2, {
+            type: 'pie',
+            data: chartData2,
+            options: chartOptions
+        });
+    </script>
+
+</body>
+</html>

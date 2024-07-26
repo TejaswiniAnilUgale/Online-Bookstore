@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bookstore</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+
+     
+    <!-- Navbar -->
+    <div>
+        <nav class="navbar navbar-expand-lg navbar">
+            <div class="container">
+                <a class="navbar-brand shadow-lg fs-2" href="Home.html" style="color:#F5F5DC;">BookBin</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Book.html">Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Contact.html">Contact Us</a>
+                        </li>
+                        <li>
+                            <a class="btn nav-link" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                <i class='bx bxs-cart-alt'></i>Cart
+                              </a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="btn btn-outline nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class='bx bxs-user-circle'></i>
+                              </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item acc" href="Index.html" style="  background-color: #800000;color:#F5F5DC;"><strong>LogOut</strong></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+            
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Your Favorite</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body"></div>
+        </div>
+        
+    </div>
+    </div>
+
+    <!-- End Navbar -->
+
+<!-- Book Card Section -->
+<div class="container p-6 gap-2 ">
+    <div class="bg-white shadow-md rounded-lg book-cards d-flex flex-column flex-md-row" style="margin: 50px 20px 30px 150px;">
+        <div class="flex-shrink-0 mr-6">
+            <img src="Book/The Great Gatsby.jpg" alt="Book Cover" class="w-100 h-auto rounded-md shadow-lg" style="max-width: 350px;">
+        </div>
+        <div class="w-100 mt-4 mt-md-0">
+            <div class="row shadow pb-4 ps-4" style="margin-left: 10%; height: auto; width: 720px;">
+                
+                <div class="col-md-12 book-info" style="width: fit-content;">
+                    <div class="favorite-icon pt-3" id="favoriteIcon">
+                        <i class='bx bxs-heart' style="margin-right: 15%;"></i>
+                    </div>
+                    <h3 class="bookTitle fs-1">The Great Gatsby</h3>
+                    <p class="bookAuthor"><strong>By F. Scott Fitzgerald</strong></p>
+                    <p style="width: 80%;">"The Great Gatsby," written by F. Scott Fitzgerald and published in 1925, is a classic novel set in the Jazz Age on Long Island near New York City. The story follows the mysterious and wealthy Jay Gatsby and his obsession with the beautiful former debutante Daisy Buchanan. Narrated by Nick Carraway, Gatsby's neighbor and Daisy's cousin, the novel explores themes of decadence, idealism, resistance to change, social upheaval, and excess, creating a portrait of the Roaring Twenties and a critical look at the American Dream.</p>
+                    <p class="bookPrice fs-2"><strong>&#8377; 299</strong></p>
+                    <a href="BuyNow.html" class="btn fs-4" style="background-color: #800000; color: #F5F5DC;"><strong>Buy Now</strong></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 style="text-align: center;">Review of Book</h2>
+<hr>
+<div class="d-flex flex-column flex-md-row gap-5 my-5" style="margin-left: 6%;">
+    <div class="card mb-4 mb-md-0" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title fs-4">Michael Wood</h5>
+            <p class="card-text fs-5" style="color: gold;">★★★★★</p>
+            <p class="card-text">Michael Wood praises Fitzgerald's ability to capture the essence of the Jazz Age while providing profound social commentary. He highlights the novel's enduring relevance and its exploration of the American Dream's dark side.</p>
+        </div>
+    </div>
+    <div class="card mb-4 mb-md-0" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title fs-4">Richard H. Pells</h5>
+            <p class="card-text fs-5" style="color: gold;">★★★★☆</p>
+            <p class="card-text">Pells appreciates the novel's portrayal of the 1920s' cultural landscape but critiques its narrow focus on the upper class, suggesting it may not fully represent the era's diversity and societal issues.</p>
+        </div>
+    </div>
+    <div class="card mb-4 mb-md-0" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title fs-4">Emma</h5>
+            <p class="card-text fs-5" style="color: gold;">★★★★☆</p>
+            <p class="card-text">Emma enjoys Fitzgerald's poetic prose and character development, particularly Gatsby's enigmatic persona. However, she finds the novel's portrayal of women somewhat dated and wishes for more depth in Daisy's character.</p>
+        </div>
+    </div>
+    <div class="card mb-4 mb-md-0" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title fs-4">Ms. Johnson</h5>
+            <p class="card-text fs-5" style="color: gold;">★★★☆☆</p>
+            <p class="card-text">Ms. Johnson values the novel's educational merit for its historical context and thematic depth. She finds it a valuable teaching tool for discussing social class, the American Dream, and literary techniques.</p>
+        </div>
+    </div>
+</div>
+
+    
+<!-- Footer -->
+<footer class="footer mt-auto py-3">
+    <div class="container-fliud">
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <h5>BookBin</h5>
+                <p>Your one-stop e-book for diverse reads & literary treasures</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="Book.html">Books</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 follow">
+                <h5>Follow Us</h5>
+                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="#"><i class='bx bxl-facebook-square'></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const favoriteIcon = document.getElementById('favoriteIcon');
+        const offcanvasBody = document.querySelector('.offcanvas-body');
+
+        favoriteIcon.addEventListener('click', function() {
+            this.classList.toggle('favorite');
+            addToCart();
+        });
+
+        function addToCart() {
+            const bookTitle = document.querySelector('.book-cards h3').textContent;
+            const bookAuthor = document.querySelector('.book-cards p:nth-of-type(1)').textContent;
+            const bookPrice = document.querySelector('.book-cards p:nth-of-type(3)').textContent;
+
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('cart-item');
+            cartItem.innerHTML = `
+                <p><strong>${bookTitle}</strong></p>
+                <p>${bookAuthor}</p>
+                <p>${bookPrice}</p>
+                <hr>
+            `;
+
+            offcanvasBody.appendChild(cartItem);
+        }
+    });
+</script>
+
+
+</body>
+</html>

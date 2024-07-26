@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bookstore</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+
+     
+    <!-- Navbar -->
+    <div>
+        <nav class="navbar navbar-expand-lg navbar">
+            <div class="container">
+                <a class="navbar-brand shadow-lg fs-2 ms-5" href="Home.html" style="color:#F5F5DC;">BookBin</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color: #800000;">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Book.html">Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Contact.html">Contact Us</a>
+                        </li>
+                        <li>
+                            <a class="btn nav-link" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                <i class='bx bxs-cart-alt'></i>Cart
+                              </a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="btn btn-outline nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class='bx bxs-user-circle'></i>
+                              </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item acc" href="Index.html" style="  background-color: #800000;color:#F5F5DC;"><strong>LogOut</strong></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="text" oninput="search()" placeholder="Search" class="rounded-pill px-3" id="searchin" >
+                            <i class='bx bx-search-alt'></i>
+                            <div id="searchResult" class="d-none rounded-lg position-fixed" ></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+            
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Your Favorite</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body"></div>
+        </div>
+    </div>
+    </div>
+
+    <!-- End Navbar -->
+     
+    <!-- banner section -->
+
+
+<section class="banner">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-8 ">
+                <h1>Discover Your Next Favorite Book</h1>
+                <p>Browse our extensive collection of books from various genres. Enjoy exclusive deals & new arrivals.</p>
+                <a href="Book.html" class="btn btn-primary">Shop Now</a>
+            </div>
+            <div class="col-md-4">
+                <img src="Image/banner.png" alt="Banner Image" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end of banner-->
+
+<!-- Features section -->
+
+<section class="featured-section">
+    
+    <div class="container">
+        <hr>
+        <h2>Explore Our Books</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="book-card cart-item">
+                    <img src="Book/1.jpeg" alt="Book Image">
+                    <h5 class="bookTitle">Wings of Fire</h5>
+                    <p class="bookAuthor">By Tui T. Sutherland</p>
+                    <p class="bookPrice">&#x20b9; 200</p>
+                    <a href="Book-card.html" class="btn btn-primary">Buy Now</a>
+                    <a href="#" class="btn btn-secondary">Add to Cart</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="book-card">
+                    <img src="Book/2.jpeg" alt="Book Image">
+                    <h5>The Book Of Lost Names</h5>
+                    <p>By Kristin Harmel</p>
+                    <p>&#x20b9; 500</p>
+                    <a href="Book-card.html" class="btn btn-primary">Buy Now</a>
+                    <a href="#" class="btn btn-secondary">Add to Cart</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="book-card">
+                    <img src="Book/3.jpeg" alt="Book Image">
+                    <h5>Stephen King</h5>
+                    <p>By Mercedes & Finders Keepers</p>
+                    <p>&#x20b9; 350</p>
+                    <a href="Book-card.html" class="btn btn-primary">Buy Now</a>
+                    <a href="#" class="btn btn-secondary">Add to Cart</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="book-card">
+                    <img src="Book/4.jpg" alt="Book Image">
+                    <h5>Herry Potter</h5>
+                    <p>By J. K. Rowling</p>
+                    <p>&#x20b9; 400</p>
+                    <a href="Book-card.html" class="btn btn-primary">Buy Now</a>
+                    <a href="#" class="btn btn-secondary">Add to Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="view-more ">
+            <a href="Book.html" class="btn" style="color: #800000; border: 2px solid #800000;">View More</a>
+        </div>
+    </div>
+</section>
+<!-- end of fearture section -->
+
+    <!-- About section -->
+    <div class="container mx-auto p-6 my-5">
+        <header class="text-center mb-12">
+            <hr>
+            <h1 class="text-4xl font-bold text-gray-900" style="color: #800000;">About Us</h1>
+        </header>
+        
+        <section class="bg-white p-8 shadow-md rounded-lg mb-8 d-flex gap-5 about-section">
+            <div>
+                <h2 class="text-2xl font-bold mb-4">At Book Bin,</h2>
+                <p class="text-gray-700 mb-4">"we believe in the magic of books and the joy of reading. Founded in 2024, our mission is to provide book lovers with a curated selection of literature from all genres. Whether you're looking for the latest bestseller, a timeless classic, or a hidden gem, you'll find it here. Join our community of readers and discover your next great read today."</p>
+            </div>
+            <div class="flex justify-center">
+                <img src="Image/about.png" alt="Book Bin Image" class="rounded-lg shadow-lg" width="400" height="300">
+            </div>
+        </section>
+    </div>
+    <!-- end of about section -->
+     
+<!-- Customer Review -->
+<div class="container mx-auto p-6">
+    <header class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-gray-900">What Our Readers Say</h1>
+    </header>
+    
+    <section class="space-y-8 d-flex text-center gap-5 my-5">
+        <div class="bg-white p-8 shadow-md rounded-lg flex items-center card">
+            <div class="flex-shrink-0 mr-4 card-img-top">
+                <img src="Image/profile.png" alt="Customer 1" class="rounded-full h-24 w-24 object-cover" width="100" height="100">
+            </div>
+            <div>
+                <h2 class="text-xl font-bold mb-2 card-title">Sanket Patil</h2>
+                <p class="text-gray-700 w-2 card-text">"This is a sample review that highlights the customer's feedback on our services."</p>
+            </div>
+        </div>
+
+        <div class="bg-white p-8 shadow-md rounded-lg flex items-center card">
+            <div class="flex-shrink-0 mr-4 card-img-top">
+                <img src="Image/woman (1).png" alt="Customer 2" class="rounded-full h-24 w-24 object-cover" width="100" height="100">
+            </div>
+            <div>
+                <h2 class="text-xl font-bold mb-2 card-title">Sailee Landge</h2>
+                <p class="text-gray-700 card-text">"This is a sample review that highlights the customer's feedback on our services."</p>
+            </div>
+        </div>
+
+        <div class="bg-white p-8 shadow-md rounded-lg flex items-center card">
+            <div class="flex-shrink-0 mr-4 card-img-top">
+                <img src="Image/woman.png" alt="Customer 3" class="rounded-full h-24 w-24 object-cover" width="100" height="100">
+            </div>
+            <div>
+                <h2 class="text-xl font-bold mb-2 card-title">Bhavika Karnawat</h2>
+                <p class="text-gray-700 card-text">"This is a sample review that highlights the customer's feedback on our services."</p>
+            </div>
+        </div>
+    </section>
+</div>
+ <!-- end of customer review -->
+
+<!-- Footer -->
+<footer class="footer mt-auto py-3">
+    <div class="container">
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <h5>BookBin</h5>
+                <p>Your one-stop e-book for diverse reads & literary treasures</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="Book.html">Books</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 follow">
+                <h5>Follow Us</h5>
+                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="#"><i class='bx bxl-facebook-square'></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer -->
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const offcanvasBody = document.querySelector('.offcanvas-body');
+        const btns = document.querySelectorAll('.btn');
+
+        btns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const bookCard = this.closest('.book-card');
+                const bookTitle = bookCard.querySelector('h5').textContent;
+                const bookAuthor = bookCard.querySelector('p:nth-of-type(1)').textContent;
+                const bookPrice = bookCard.querySelector('p:nth-of-type(2)').textContent;
+
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <p><strong>${bookTitle}</strong></p>
+                    <p>${bookAuthor}</p>
+                    <p>${bookPrice}</p>
+                    <hr>
+                `;
+
+                offcanvasBody.appendChild(cartItem);
+            });
+        });
+    });
+
+
+
+    
+    const schemes = [
+    { name: "literary", link: "Book.html#Literary" },
+    { name: "History", link: "Book.html#History" },
+    { name: "Science", link: "Book.html#Science" },
+    { name: "Fantasy", link: "Book.html#Fantasy" },
+    { name: "Mystery", link: "Book.html#Mystery" },
+    { name: "Romance", link: "Book.html#Romance" },
+    { name: "Horror", link: "Book.html#Horror" },  
+    { name: "Magical Realism", link: "Book.html#MagicalRealism" }
+];
+
+
+function search() {
+    const input = document.getElementById("searchin").value.toLowerCase();
+    const results = schemes.filter((scheme) => scheme.name.toLowerCase().includes(input));
+
+    const resultContainer = document.getElementById("searchResult");
+    resultContainer.innerHTML = "";
+
+    if (input && results.length > 0) {
+        resultContainer.classList.remove("d-none");
+        results.forEach((result) => {
+            const resultItem = document.createElement("a");
+            resultItem.href = result.link;
+            resultItem.classList.add("resultItem");
+            resultItem.textContent = result.name;
+            resultItem.style.display = "block";
+            resultItem.style.width= 100;
+            resultItem.style.color = "#800000";
+            resultItem.style.textDecoration = "none";
+            resultItem.style.backgroundColor = "#F5F5DC";
+            resultContainer.appendChild(resultItem);
+        });
+    } else {
+        resultContainer.classList.add("d-none");
+    }
+}
+</script>
+
+
+</body>
+</html>

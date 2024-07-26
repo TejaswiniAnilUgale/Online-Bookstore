@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bookstore</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+
+     
+    <!-- Navbar -->
+    <div>
+        <nav class="navbar navbar-expand-lg navbar">
+            <div class="container">
+                <a class="navbar-brand shadow-lg fs-2 ms-5" href="Home.html" style="color:#F5F5DC;">BookBin</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Book.html">Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Contact.html">Contact Us</a>
+                        </li>
+                        <li>
+                            <a class="btn nav-link" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                <i class='bx bxs-cart-alt'></i>Cart
+                              </a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="btn btn-outline nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class='bx bxs-user-circle'></i>
+                              </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item acc" href="Index.html" style="  background-color: #800000;color:#F5F5DC;"><strong>LogOut</strong></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <input type="text" oninput="search()" placeholder="Search" class="rounded-pill px-3" id="searchin" >
+                            <i class='bx bx-search-alt'></i>
+                            <div id="searchResult" class="d-none rounded-lg position-fixed" ></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+            
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Your Favorite</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+    </div>
+    </div>
+
+    <!-- End Navbar -->
+     
+    <!-- Header Section -->
+    <header class="bg-blue-600 text-white text-center py-10">
+        <h1 class="text-4xl font-bold">Explore Our Collection</h1>
+        <p class="text-xl mt-2">Find the perfect book for your next read</p>
+    </header>
+
+    <!-- Book Sections -->
+    <div class="container mx-auto p-6">
+        <!-- Fantasy Section -->
+        <section class="mb-12">
+            <h1 class="text-3xl font-bold text-gray-900 mb-6" style="margin-left: 40%;">FICTION</h1>
+
+            <h2 class="text-3xl font-bold text-gray-900 my-5" id="Literary">&mdash;&mdash;&mdash;&mdash; &nbsp;Literary</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4" style="height: 300px;">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card">
+                        <img src="Book/The Great Gatsby.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h4 class="text-xl font-bold mb-2">The Great Gatsby</h4>
+                        <p class="text-gray-700 mb-2">By F. Scott Fitzgerald</p>
+                        <p class="text-gray-900 font-bold">₹ 299</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-1">
+                        <img src="Book/To Kill a Mockingbird.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">To Kill a Mockingbird</h3>
+                        <p class="text-gray-700 mb-2">By Harper Lee</p>
+                        <p class="text-gray-900 font-bold">₹ 350</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-2">
+                        <img src="Book/Pride and Prejudice.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">Pride and Prejudice</h3>
+                        <p class="text-gray-700 mb-2">By Jane Austen</p>
+                        <p class="text-gray-900 font-bold">₹ 250</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-3">
+                        <img src="Book/The Catcher in the Rye.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h2 class="text-xl font-bold mb-2">The Catcher in the Rye</h2>
+                        <p class="text-gray-700 mb-2">By J.D. Salinger</p>
+                        <p class="text-gray-900 font-bold">₹ 400</p>
+                    </div>
+                </div>
+
+                
+            <h2 class="text-3xl font-bold text-gray-900 mb-5" id="Science">&mdash;&mdash;&mdash;&mdash; &nbsp;Science</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-4">
+                        <img src="Book/A Brief History of Time.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h4 class="text-xl font-bold mb-2">A Brief History of Time</h4>
+                        <p class="text-gray-700 mb-2">By Stephen Hawking</p>
+                        <p class="text-gray-900 font-bold">₹ 399</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-5">
+                        <img src="Book/The_Selfish_Gene.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-1">The Selfish Gene</h3>
+                        <p class="text-gray-700 mb-0">By Richard Dawkins</p>
+                        <p class="text-gray-900 font-bold">₹ 450</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-6">
+                        <img src="book/Cosmos.jpeg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h1 class="text-xl font-bold mb-2">Cosmos</h1>
+                        <p class="text-gray-700 mb-2">By Carl Sagan</p>
+                        <p class="text-gray-900 font-bold">₹ 500</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-7">
+                        <img src="Book/The_Gene_An_Intimate_History_cover.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h5 class="text-xl font-bold mb-2">The Gene: An Intimate History</h5>
+                        <p class="text-gray-700 mb-2">By Siddhartha Mukherjee</p>
+                        <p class="text-gray-900 font-bold">₹ 600</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-5" id="History">&mdash;&mdash;&mdash;&mdash; &nbsp;History</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-8">
+                        <img src="Book/Sapiens.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h5 class="text-xl font-bold mb-2">Sapiens: A Brief History of Humankind</h5>
+                        <p class="text-gray-700 mb-2">By Yuval Noah Harari</p>
+                        <p class="text-gray-900 font-bold">₹ 499</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-9">
+                        <img src="Book/Guns, Germs, and Steel.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h4 class="text-xl font-bold mb-1">Guns, Germs, and Stee</h4>
+                        <p class="text-gray-700 mb-1">By Jared Diamond</p>
+                        <p class="text-gray-900 font-bold">₹ 550</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-10">
+                        <img src="Book/The Wright Brothers.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-0">The Wright Brothers</h3>
+                        <p class="text-gray-700 mb-1">By David McCullough</p>
+                        <p class="text-gray-900 font-bold">₹ 450</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-11">
+                        <img src="Book/A People's History of the United States.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h5 class="text-xl font-bold mb-2">A People's History of the United States</h5>
+                        <p class="text-gray-700 mb-2">By Howard Zinn</p>
+                        <p class="text-gray-900 font-bold">₹ 600</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-5" id="Fantasy">&mdash;&mdash;&mdash;&mdash; &nbsp;Fantasy</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-12">
+                        <img src="Book/Harry_Potter_and_the_Philosopher's_Stone_Book_Cover.jpg" alt="Book Image" class="w-full  rounded-md mb-4">
+                        <h5 class="text-xl font-bold mb-2">Harry Potter and the Sorcerer's Stone</h5>
+                        <p class="text-gray-700 mb-2">By J.K. Rowling</p>
+                        <p class="text-gray-900 font-bold">₹ 450</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-13">
+                        <img src="Book/TheHobbit.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-3">The Hobbit</h3>
+                        <p class="text-gray-700 mb-3">By J.R.R. Tolkien</p>
+                        <p class="text-gray-900 font-bold">₹ 400</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-14">
+                        <img src="Book/TheNameoftheWind_cover.jpg" alt="Book Image" class="w-full  rounded-md mb-4">
+                        <h4 class="text-xl font-bold mb-1">The Name of the Wind</h4>
+                        <p class="text-gray-700 mb-1">By Patrick Rothfuss</p>
+                        <p class="text-gray-900 font-bold">₹ 550</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-15">
+                        <img src="Book/AGameOfThrones.jpg" alt="Book Image" class="w-full rounded-md mb-4">
+                        <h4 class="text-xl font-bold mb-1">A Game of Thrones</h4>
+                        <p class="text-gray-700 mb-1">By  George R.R. Martin</p>
+                        <p class="text-gray-900 font-bold">₹ 600</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-5" id="Mystery">&mdash;&mdash;&mdash;&mdash; &nbsp;Mystery</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-16">
+                        <img src="Book/Thegirlwiththedragontattoo.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h5 class="text-xl font-bold mb-2">The Girl with the Dragon Tattoo</h5>
+                        <p class="text-gray-700 mb-2">By Stieg Larsson</p>
+                        <p class="text-gray-900 font-bold">₹ 399</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-17">
+                        <img src="Book/Gone_Girl.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">Gone Girl</h3>
+                        <p class="text-gray-700 mb-2">By Gillian Flynn</p>
+                        <p class="text-gray-900 font-bold">₹ 450</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-18">
+                        <img src="Book/DaVinciCode.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h4 class="text-xl font-bold mb-2">The Da Vinci Code</h4>
+                        <p class="text-gray-700 mb-3">By Dan Brown</p>
+                        <p class="text-gray-900 font-bold">₹ 500</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-19">
+                        <img src="Book/Big_Little_Lies_Cover.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">Big Little Lies</h3>
+                        <p class="text-gray-700 mb-2">By  Liane Moriarty</p>
+                        <p class="text-gray-900 font-bold">₹ 550</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-5" id="Romance">&mdash;&mdash;&mdash;&mdash; &nbsp;Romance</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-20">
+                        <img src="Book/Pride and Prejudice.jpg" alt="Book Image" class="w-full rounded-md mb-4" style="width: auto; height: 280px;">
+                        <h3 class="text-xl font-bold mb-2">Pride and Prejudice</h3>
+                        <p class="text-gray-700 mb-2">By Jane Austen</p>
+                        <p class="text-gray-900 font-bold">₹ 250</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-21">
+                        <img src="Book/The_Notebook_Cover.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">The Notebook</h3>
+                        <p class="text-gray-700 mb-2">By Nicholas Sparks</p>
+                        <p class="text-gray-900 font-bold">₹ 350</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-22">
+                        <img src="Book/Me_Before_You.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">Me Before You</h3>
+                        <p class="text-gray-700 mb-2">By Jojo Moyes</p>
+                        <p class="text-gray-900 font-bold">₹ 450</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-23">
+                        <img src="book/The_Fault_in_Our_Stars.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h4 class="text-xl font-bold mb-1">The Fault in Our Stars</h4>
+                        <p class="text-gray-700 mb-1">By  George John Green</p>
+                        <p class="text-gray-900 font-bold">₹ 400</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-5" id="Horror">&mdash;&mdash;&mdash;&mdash; &nbsp;Horror</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-24">
+                        <img src="Book/The_Shining.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">The Shining</h3>
+                        <p class="text-gray-700 mb-2">By Stephen King</p>
+                        <p class="text-gray-900 font-bold">₹ 500</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-25">
+                        <img src="Book/Dracula.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">Dracula</h3>
+                        <p class="text-gray-700 mb-2">By Bram Stoker</p>
+                        <p class="text-gray-900 font-bold">₹ 299</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-26">
+                        <img src="Book/Frankenstein.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">Frankenstein</h3>
+                        <p class="text-gray-700 mb-2">By Mary Shelley</p>
+                        <p class="text-gray-900 font-bold">₹ 350</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-27">
+                        <img src="Book/Bird_Box.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">Bird Box</h3>
+                        <p class="text-gray-700 mb-2">By  Josh Malerman</p>
+                        <p class="text-gray-900 font-bold">₹ 400</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-5" id="MagicalRealism">&mdash;&mdash;&mdash;&mdash; &nbsp;Magical Realism</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-28">
+                        <img src="Book/One Hundred Years of Solitude.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h4 class="text-xl font-bold mb-2">One Hundred Years of Solitude</h4>
+                        <p class="text-gray-700 mb-3">By Gabriel Garcia Marquez</p>
+                        <p class="text-gray-900 font-bold">₹ 300</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-29">
+                        <img src="Book/MidnightsChildren.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h4 class="text-xl font-bold mb-2">Midnight's Children</h4>
+                        <p class="text-gray-700 mb-2">By Salman Rushdie</p>
+                        <p class="text-gray-900 font-bold">₹ 450</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-30">
+                        <img src="Book/Houseofthesprirts.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">The House of the Spirits</h3>
+                        <p class="text-gray-700 mb-2">By Isabel Allende</p>
+                        <p class="text-gray-900 font-bold">₹ 550</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-31">
+                        <img src="Book/The Wright Brothers.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h4 class="text-xl font-bold mb-2">The Wind-Up Bird Chronicle</h4>
+                        <p class="text-gray-700 mb-2">By  Haruki Murakami</p>
+                        <p class="text-gray-900 font-bold">₹ 600</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Fiction Section -->
+        <section>
+            <h1 class="text-3xl font-bold text-gray-900 mb-6" style="margin-left: 40%;">NON-FICTION</h1>
+
+            <h2 class="text-3xl font-bold text-gray-900 my-5" id="Biography and Memoir">&mdash;&mdash;&mdash;&mdash; &nbsp;Biography and Memoir</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-32">
+                        <img src="Book/Becoming.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-3">Becoming</h3>
+                        <p class="text-gray-700 mb-3">By Michelle Obama</p>
+                        <p class="text-gray-900 font-bold">₹ 599</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-33">
+                        <img src="Book/the_Diary_of_Young_girl.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h4 class="text-xl font-bold mb-1">The Diary of a Young Girl</h4>
+                        <p class="text-gray-700 mb-1">By Anne Frank</p>
+                        <p class="text-gray-900 font-bold">₹ 350</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-34">
+                        <img src="Book/Long_Walk_to_Freedom.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h4 class="text-xl font-bold mb-1">Long Walk to Freedom</h4>
+                        <p class="text-gray-700 mb-1">By Nelson Mandela</p>
+                        <p class="text-gray-900 font-bold">₹ 500</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-35">
+                        <img src="Book/Steve_Jobs_by_Walter_Isaacson.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">Steve Jobs</h3>
+                        <p class="text-gray-700 mb-2">By Walter Isaacson</p>
+                        <p class="text-gray-900 font-bold">₹ 800</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-5">&mdash;&mdash;&mdash;&mdash; &nbsp;Self-Help</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-36">
+                        <img src="Book/The_Power_of_Habit.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h4 class="text-xl font-bold mb-2">The Power of Habit</h4>
+                        <p class="text-gray-700 mb-2">By Charles Duhigg</p>
+                        <p class="text-gray-900 font-bold">₹ 499</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-37">
+                        <img src="Book/Atomic Habits.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">Atomic Habits</h3>
+                        <p class="text-gray-700 mb-2">By James Clear</p>
+                        <p class="text-gray-900 font-bold">₹ 450</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-38">
+                        <img src="Book/the subtle art of not giving a f_ck" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h5 class="text-xl font-bold mb-1">The Subtle Art of Not Giving a F*ck</h5>
+                        <p class="text-gray-700 mb-0">By Mark Manson</p>
+                        <p class="text-gray-900 font-bold">₹ 350</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-39">
+                        <img src="Book/Think_and_grow_rich_original_cover.jpg" alt="Book Image" class="w-full rounded-md mb-4" height="400">
+                        <h3 class="text-xl font-bold mb-3">Think and Grow Rich</h3>
+                        <p class="text-gray-700 mb-3">By Napoleon Hill</p>
+                        <p class="text-gray-900 font-bold">₹ 299</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-5" id="TrueCrime">&mdash;&mdash;&mdash;&mdash; &nbsp;True Crime</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-40">
+                        <img src="Book/In Cold Blood.png" alt="Book Image" class="w-full h-auto mb-4" >
+                        <h3 class="text-xl font-bold mb-2">In Cold Blood</h3>
+                        <p class="text-gray-700 mb-3">By Truman Capote</p>
+                        <p class="text-gray-900 font-bold">₹ 499</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-41">
+                        <img src="Book/Ill_be_gone_in_the_dark.jpg" alt="Book Image" class="w-full h-auto mb-4">
+                        <h2 class="text-xl font-bold mb-3">I'll Be Gone in the Dark</h2>
+                        <p class="text-gray-700 mb-3">By Michelle McNamara</p>
+                        <p class="text-gray-900 font-bold">₹ 450</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-42">
+                        <img src="Book/MidnightsChildren.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h4 class="text-xl font-bold mb-0">Midnight in the Garden of Good and Evil</h4>
+                        <p class="text-gray-700 mb-0">By John Berendt</p>
+                        <p class="text-gray-900 font-bold">₹ 400</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-43">
+                        <img src="book/The_Stranger_Beside_Me_(book).jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">The Stranger Beside Me</h3>
+                        <p class="text-gray-700 mb-2">By Ann Rule</p>
+                        <p class="text-gray-900 font-bold">₹ 550</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-5" id="Travel">&mdash;&mdash;&mdash;&mdash; &nbsp;Travel</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-44">
+                        <img src="Book/Into_the_Wild_(book)_cover.png" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">Into the Wild</h3>
+                        <p class="text-gray-700 mb-2">By Jon Krakauer</p>
+                        <p class="text-gray-900 font-bold">₹ 450</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-45">
+                        <img src="Book/The_Geography_of_Bliss.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h4 class="text-xl font-bold mb-1">The Geography of Bliss</h4>
+                        <p class="text-gray-700 mb-1">By Eric Weiner</p>
+                        <p class="text-gray-900 font-bold">₹ 400</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-46">
+                        <img src="Book/Bill_Bryson_A_Walk_In_The_Woods.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h4 class="text-xl font-bold mb-1">A Walk in the Woods</h4>
+                        <p class="text-gray-700 mb-0">By Bill Bryson</p>
+                        <p class="text-gray-900 font-bold">₹ 500</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-47">
+                        <img src="Book/Eat,_Pray,_Love_–_Elizabeth_Gilbert,_2007.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-3">Eat, Pray, Love</h3>
+                        <p class="text-gray-700 mb-3">By Elizabeth Gilbert</p>
+                        <p class="text-gray-900 font-bold">₹ 399</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-5" id="ArtandPhotography">&mdash;&mdash;&mdash;&mdash; &nbsp;Art and Photography</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-48">
+                        <img src="Book/Humans of New York.jpeg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">Humans of New York</h3>
+                        <p class="text-gray-700 mb-2">By Brandon Stanton</p>
+                        <p class="text-gray-900 font-bold">₹ 1500</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-49">
+                        <img src="Book/Understanding Exposure.jpg" alt="Book Image" class="w-full h-24 rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">Understanding Exposure</h3>
+                        <p class="text-gray-700 mb-2">By Bryan Peterson</p>
+                        <p class="text-gray-900 font-bold">₹ 999</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-50">
+                        <img src="book/The Art of Photography.jpg" alt="Book Image" class="w-full h-24 rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">The Art of Photography</h3>
+                        <p class="text-gray-700 mb-2">By Bruce Barnbaum</p>
+                        <p class="text-gray-900 font-bold">₹2000</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-51">
+                        <img src="Book/Waysofseeing.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-3">
+                        <h3 class="text-xl font-bold mb-0">Ways of Seeing</h3>
+                        <p class="text-gray-700 mb-0">By John Berger</p>
+                        <p class="text-gray-900 font-bold">₹ 399</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-5" id="PersonalDevelopment">&mdash;&mdash;&mdash;&mdash; &nbsp;Personal Development</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-52">
+                        <img src="Book/Man's Search for Meaning.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">Man's Search for Meaning</h3>
+                        <p class="text-gray-700 mb-2">By Viktor E. Frankl</p>
+                        <p class="text-gray-900 font-bold">₹ 350</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-53">
+                        <img src="Book/Awaken the Giant Within.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-2">
+                        <h3 class="text-xl font-bold mb-1">Awaken the Giant Within</h3>
+                        <p class="text-gray-700 mb-1">By Tony Robbins</p>
+                        <p class="text-gray-900 font-bold">₹ 499</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-54">
+                        <img src="Book/Daring_Greatly_Book_Cover.png" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-3">Daring Greatly</h3>
+                        <p class="text-gray-700 mb-2">By Brené Brown</p>
+                        <p class="text-gray-900 font-bold">₹ 450</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-55">
+                        <img src="Book/You Are a Badass.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h4 class="text-xl font-bold mb-2">You Are a Badass</h4>
+                        <p class="text-gray-700 mb-2">By Jen Sincero</p>
+                        <p class="text-gray-900 font-bold">₹ 350</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-5" id="BusinessandE-conomics">&mdash;&mdash;&mdash;&mdash; &nbsp;Business and E-conomics</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-56">
+                        <img src="Book/The Intelligent Investor.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">The Intelligent Investor</h3>
+                        <p class="text-gray-700 mb-2">By Benjamin Graham</p>
+                        <p class="text-gray-900 font-bold">₹ 800</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-57">
+                        <img src="Book/Rich Dad Poor Dad.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">Rich Dad Poor Dad</h3>
+                        <p class="text-gray-700 mb-2">By Robert T. Kiyosaki</p>
+                        <p class="text-gray-900 font-bold">₹ 399</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-58">
+                        <img src="Book/Lean_Startup.png" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">The Lean Startup</h3>
+                        <p class="text-gray-700 mb-2">By Eric Ries</p>
+                        <p class="text-gray-900 font-bold">₹ 499</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-59">
+                        <img src="book/Thinking,_Fast_and_Slow.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-2">Thinking, Fast and Slow</h3>
+                        <p class="text-gray-700 mb-2">By Daniel Kahneman</p>
+                        <p class="text-gray-900 font-bold">₹ 450</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-5" id="HealthandWellness">&mdash;&mdash;&mdash;&mdash; &nbsp;Health and Wellness</h2>
+            <div class="row">
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-60">
+                        <img src="Book/The_Body_A_Guide_for_Occupants.png" alt="Book Image" class="w-full h-auto rounded-md mb-3">
+                        <h4 class="text-xl font-bold mb-1">The Body: A Guide for Occupants</h4>
+                        <p class="text-gray-700 mb-2">By Bill Bryson</p>
+                        <p class="text-gray-900 font-bold">₹ 600</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-61">
+                        <img src="Book/How Not to Die.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h3 class="text-xl font-bold mb-3">How Not to Die</h3>
+                        <p class="text-gray-700 mb-2">By Michael Greger</p>
+                        <p class="text-gray-900 font-bold">₹ 550</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-62">
+                        <img src="Book/The Power of Now.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-1">
+                        <h3 class="text-xl font-bold mb-1">The Power of Now</h3>
+                        <p class="text-gray-700 mb-1">By Eckhart Tolle</p>
+                        <p class="text-gray-900 font-bold">₹ 399</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-63">
+                        <img src="Book/The 4-Hour Body.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                        <h4 class="text-xl font-bold mb-2">The 4-Hour Body</h4>
+                        <p class="text-gray-700 mb-2">By Tim Ferriss</p>
+                        <p class="text-gray-900 font-bold">₹700</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+    <section>
+        <h1 class="text-3xl font-bold text-gray-900 mb-5" id="Mangass">&nbsp;&nbsp;&nbsp;&nbsp;Mangas</h1>
+
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-64">
+                    <img src="Book/Naruto.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-2">
+                    <h3 class="text-xl font-bold mb-2">Naruto</h3>
+                    <p class="text-gray-700 mb-2">By Michelle Obama</p>
+                    <p class="text-gray-900 font-bold">₹ 500</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-65">
+                    <img src="Book/One_Piece.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-2">
+                    <h3 class="text-xl font-bold mb-2">One Piece</h3>
+                    <p class="text-gray-700 mb-2">By Eiichiro Oda</p>
+                    <p class="text-gray-900 font-bold">₹ 500</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-66">
+                    <img src="Book/Suzume_no_Tojimari_poster.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                    <h3 class="text-xl font-bold mb-3">Suzume</h3>
+                    <p class="text-gray-700 mb-3">By Makoto Shinkai</p>
+                    <p class="text-gray-900 font-bold">₹ 500</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="book-card bg-white p-4 rounded-lg shadow-md" onclick="handleClick('book-card')" id="book-card-67">
+                    <img src="Book/Your_Name.jpg" alt="Book Image" class="w-full h-auto rounded-md mb-4">
+                    <h3 class="text-xl font-bold mb-3">Your Name</h3>
+                    <p class="text-gray-700 mb-3">By Makoto Shinkai</p>
+                    <p class="text-gray-900 font-bold">₹ 450</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+<!-- Footer -->
+<footer class="footer mt-auto py-3">
+    <div class="container">
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <h5>BookBin</h5>
+                <p>Your one-stop e-book for diverse reads & literary treasures</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="Book.html">Books</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 follow">
+                <h5>Follow Us</h5>
+                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="#"><i class='bx bxl-facebook-square'></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer -->
+
+<script>
+        document.getElementById("book-card").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+      document.getElementById("book-card-1").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-2").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-3").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-4").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-5").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-6").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-7").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-8").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-9").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-10").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-11").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-12").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-13").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-14").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-15").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-16").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-17").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-18").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-19").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-20").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-21").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-22").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-23").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-24").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-25").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-26").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-27").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-28").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-29").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-30").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-31").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-32").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-33").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-34").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-35").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-36").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-37").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-38").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-39").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-40").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-41").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-42").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-43").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-44").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-45").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-46").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-47").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-48").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-49").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-50").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-51").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-52").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-53").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-54").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-55").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-56").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-57").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-58").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-59").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-60").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-61").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-62").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-63").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-64").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-65").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-66").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+    document.getElementById("book-card-67").onclick = function() {
+        window.location.href = "Book-card.html";
+    };
+
+
+
+    const schemes = [
+    { name: "literary", link: "Book.html#Literary" },
+    { name: "History", link: "Book.html#History" },
+    { name: "Science", link: "Book.html#Science" },
+    { name: "Fantasy", link: "Book.html#Fantasy" },
+    { name: "Mystery", link: "Book.html#Mystery" },
+    { name: "Romance", link: "Book.html#Romance" },
+    { name: "Horror", link: "Book.html#Horror" }, 
+    { name: "MagicalRealism", link: "Book.html#MagicalRealism" }
+];
+
+
+function search() {
+    const input = document.getElementById("searchin").value.toLowerCase();
+    const results = schemes.filter((scheme) => scheme.name.toLowerCase().includes(input));
+
+    const resultContainer = document.getElementById("searchResult");
+    resultContainer.innerHTML = "";
+
+    if (input && results.length > 0) {
+        resultContainer.classList.remove("d-none");
+        results.forEach((result) => {
+            const resultItem = document.createElement("a");
+            resultItem.href = result.link;
+            resultItem.classList.add("resultItem");
+            resultItem.textContent = result.name;
+            resultItem.style.display = "block";
+            resultItem.style.width= 100;
+            resultItem.style.color = "#800000";
+            resultItem.style.textDecoration = "none";
+            resultItem.style.backgroundColor = "#F5F5DC";
+            resultContainer.appendChild(resultItem);
+        });
+    } else {
+        resultContainer.classList.add("d-none");
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bookstore</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+
+     
+    <!-- Navbar -->
+    <div>
+        <nav class="navbar navbar-expand-lg navbar">
+            <div class="container">
+                <a class="navbar-brand shadow-lg fs-2" href="Home.html" style="color:#F5F5DC;">BookBin</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="Book.html">Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Contact.html">Contact Us</a>
+                        </li>
+                        <li>
+                            <a class="btn nav-link" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                <i class='bx bxs-cart-alt'></i>Cart
+                              </a>
+                        </li>
+                        <li class="dropdown">
+                            <a class="btn btn-outline nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class='bx bxs-user-circle'></i>
+                              </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item acc" href="Index.html" style="  background-color: #800000;color:#F5F5DC;"><strong>LogOut</strong></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+            
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Your Favorite</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+    </div>
+    </div>
+
+    <!-- End Navbar -->
+     
+
+<!-- Main Content -->
+<div class="container my-4 buynow">
+  <div class="row">
+      <div class="col-md-6">
+          <img src="Book/The Great Gatsby.jpg" alt="Book Cover" width="400" height="600">
+      </div>
+      <div class="col-md-6">
+          <form>
+              <div class="mb-3">
+                  <label for="bookId" class="form-label"><strong>Book ID</strong></label>
+                  <input type="text" class="form-control" id="bookId" value="BID0078" readonly>
+              </div>
+              <div class="mb-3">
+                  <label for="deliveryDate" class="form-label"><strong>Delivery Date</strong></label>
+                  <input type="text" class="form-control" id="bookId" value="24/07/2024" readonly>
+              </div>
+              <div class="mb-3">
+                  <label for="shippingAddress" class="form-label"><strong>Shipping Address</strong></label>
+                  <textarea class="form-control" id="shippingAddress" rows="3" placeholder="Enter Shipping Address"></textarea>
+              </div>
+              <div class="row">
+                  <div class="col-md-6 mb-3">
+                      <label for="city" class="form-label"><strong>City</strong></label>
+                      <input type="text" class="form-control" id="city" placeholder="Enter City">
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label for="state" class="form-label"><strong>State</strong></label>
+                      <input type="text" class="form-control" id="state" placeholder="Enter State">
+                  </div>
+              </div>
+              <div class="mb-3">
+                  <label for="pinCode" class="form-label"><strong>Pin Code</strong></label>
+                  <input type="text" class="form-control" id="pinCode" placeholder="Enter Pin Code">
+              </div>
+              <div class="mb-3">
+                  <label class="form-label"><strong>Payment Details</strong></label>
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" value="cod" checked>
+                      <label class="form-check-label" for="cashOnDelivery">
+                          <strong>Cash on Delivery</strong>
+                      </label>
+                  </div>
+                  <div class="form-check">
+                      <input class="form-check-input" type="radio" name="paymentMethod" id="payOnline" value="online">
+                      <label class="form-check-label" for="payOnline">
+                          <strong>Pay Online</strong>
+                      </label>
+                  </div>
+              </div>
+              <div id="onlinePaymentDetails" style="display: none;">
+                  <div class="mb-3">
+                      <label for="cardType" class="form-label"><strong>Card Type</strong></label>
+                      <select class="form-control" id="cardType">
+                          <option>Select Card type</option>
+                          <option>Debit</option>
+                          <option>Credit</option>
+                      </select>
+                  </div>
+                  <div class="mb-3">
+                      <label for="cardNumber" class="form-label"><strong>Card Number</strong></label>
+                      <input type="text" class="form-control" id="cardNumber" placeholder="Enter Card Number" max="16" min="16">
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                          <label for="expiryDate" class="form-label"><strong>Expiry Date</strong></label>
+                          <input type="month" class="form-control" id="expiryDate">
+                      </div>
+                      <div class="col-md-6 mb-3">
+                          <label for="cvv" class="form-label"><strong>CVV</strong></label>
+                          <input type="text" class="form-control" id="cvv" placeholder="Enter CVV" max="3" min="3">
+                      </div>
+                  </div>
+              </div>
+              <a class="btn" id="loginButton" href="#loginContainer" style="background-color: #800000; color: #F5F5DC;"><strong>Place Order</strong></a>
+          </form>
+      </div>
+  </div>
+</div>
+<!-- End Main Content -->
+
+<div class="login-container" id="loginContainer">
+    <a style="font-size: 4rem; text-decoration:none; color: #f7f7eb;" class="close" id="close" href="Book.html">&times;</a>
+    <h1 style="color: #800000; background-color: #f7f7eb; width: 570px; height: 300px; justify-content: center; padding: 70px; border-radius: 50px; text-align: center; ">Your Order is Placed<br> Thank You <i class='bx bx-smile'></i> <br> Visite Again</h1>
+</div>
+
+<!-- Footer -->
+<footer class="footer mt-auto py-3">
+    <div class="container">
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <h5>BookBin</h5>
+                <p>Your one-stop e-book for diverse reads & literary treasures</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="Book.html">Books</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 follow">
+                <h5>Follow Us</h5>
+                <a href="#"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="#"><i class='bx bxl-facebook-square'></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer -->
+ 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script>
+
+    $(document).ready(function() {
+      $('input[name="paymentMethod"]').on('change', function() {
+        if ($('#payOnline').is(':checked')) {
+          $('#onlinePaymentDetails').show();
+        } else {
+          $('#onlinePaymentDetails').hide();
+        }
+      });
+    });
+
+ 
+    document.getElementById('loginButton').addEventListener('click', function () {
+        document.getElementById('loginContainer').style.display = 'flex';
+    });
+
+document.getElementById('close').addEventListener('click', function () {
+    document.getElementById('loginContainer').style.display = 'none';
+});
+
+</script>
+</body>
+</html>
